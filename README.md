@@ -13,24 +13,26 @@ UiPath Studio (Latest version recommended)
 UiPath AI/GenAI Activities Package
 UiPath Mail Activities Package
 An email account (Gmail/Outlook) configured in UiPath
-
 Installation & Setup
-1.Clone this repository:
+Clone this repository:
+bash
+Copy
+Edit
 git clone https://github.com/your-username/email-automation.git
-2.Open the project in UiPath Studio.
-3.Configure email credentials in the Get IMAP Messages activity.
-4.Run the GenerateEmail.xaml workflow.
+Open the project in UiPath Studio.
+Configure email credentials in the Get IMAP Messages activity.
+Run the GenerateEmail.xaml workflow.
 Workflow Overview
-1.Email Retrieval – Fetches unread emails from the inbox.
-2.Response Generation – Uses ChatGPT to generate appropriate replies.
-3.Email Sending – Sends the AI-generated response to the sender.
+Email Retrieval – Fetches unread emails from the inbox.
+Response Generation – Uses ChatGPT to generate appropriate replies.
+Email Sending – Sends the AI-generated response to the sender.
 Future Enhancements
-1.Sentiment-Based Classification – Classify emails as urgent or normal using a Machine Learning model.
-2.Real-Time Notifications – Alert users about high-priority emails.
+Sentiment-Based Classification – Classify emails as urgent or normal using a Machine Learning model.
+Real-Time Notifications – Alert users about high-priority emails.
 Technologies Used
-1.UiPath (RPA automation)
-2.ChatGPT (AI-generated email responses)
-3.Gmail API (Email handling)
+UiPath (RPA automation)
+ChatGPT (AI-generated email responses)
+Gmail API (Email handling)
 Contributions
 Feel free to fork this repository, raise issues, or submit pull requests to improve the project.
 
