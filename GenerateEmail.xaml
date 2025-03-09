@@ -1,0 +1,418 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GenerateEmail" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1408.8,2365.6" sap2010:WorkflowViewState.IdRef="GenerateEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugagm="clr-namespace:UiPath.GSuite.Activities.Gmail.Models;assembly=UiPath.GSuite.Activities" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C057D8DA136_v2_sub_generateChatCompletion_Create.Bundle;assembly=C057D8DA136_v2_sub_g.ktMEBFb2dF1cH0Ld4MoJjF1" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C057D8DA136_generateEmail_Create.Bundle;assembly=C057D8DA136_generate.nZ4mP4pbDcC1YzWKm10yji91" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Filters</x:String>
+      <x:String>UiPath.GSuite.Activities.Filters</x:String>
+      <x:String>UiPath.GSuite.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.GSuite</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>C99CB5C396C_v2_sub_g.cUdBc21itVM1CkSnesUWDG1</AssemblyReference>
+      <AssemblyReference>C057D8DA136_v2_sub_g.ktMEBFb2dF1cH0Ld4MoJjF1</AssemblyReference>
+      <AssemblyReference>C057D8DA136_v2_sub_g.ktMEBFb2dF1cH0Ld4MoJjF1</AssemblyReference>
+      <AssemblyReference>C057D8DA136_generate.nZ4mP4pbDcC1YzWKm10yji91</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GenerateEmail" sap:VirtualizedContainerService.HintSize="1452.0000000000002,2489.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="index">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ForEach`1_3</x:String>
+            <x:String x:Key="SourcePropertyName">CurrentIndex</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <umab:GmailApplicationCard ClientId="{x:Null}" ClientSecret="{x:Null}" Account="Please select an account" ConnectionAccountName="valliviswavarshini@gmail.com #2" ConnectionId="b6015f4e-ac2c-4b5b-b7f0-6afeda6d1e4f" DisplayName="Use Gmail" sap:VirtualizedContainerService.HintSize="568,2466.4" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_2" Timeout="90" UseConnectionService="True">
+      <umab:GmailApplicationCard.Body>
+        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="534.4,2261.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ugm:GmailMessage" Name="mailMessages" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uga:GetNewestEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" ManualEntryFolder="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfMSIsIk5hbWUiOiJbSW1hcF1cL0RyYWZ0cyIsIlR5cGUiOiJ1c2VyIn1d" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="b6015f4e-ac2c-4b5b-b7f0-6afeda6d1e4f" DisplayName="Get Newest Email" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="500.8,236" sap2010:WorkflowViewState.IdRef="GetNewestEmailConnections_3" ImportantOnly="False" MarkAsRead="False" Result="[mailMessages]" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+              <uga:GetNewestEmailConnections.Folder>
+                <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse">
+                  <ugagm:FolderArgument.Backup>
+                    <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </ugagm:FolderArgument.Backup>
+                </ugagm:FolderArgument>
+              </uga:GetNewestEmailConnections.Folder>
+            </uga:GetNewestEmailConnections>
+            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="500.8,1965.6" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[{mailMessages}]" NumberOfEmailsLimit="100" RetrieveAttachments="False" UnreadOnly="True" WithAttachmentsOnly="False">
+              <umab:ForEachEmailX.Body>
+                <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
+                  <ActivityAction.Argument1>
+                    <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="CurrentMail" />
+                  </ActivityAction.Argument1>
+                  <ActivityAction.Argument2>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                  </ActivityAction.Argument2>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="467.2,1678.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="emailSender" />
+                      <Variable x:TypeArguments="x:String" Name="emailSubject" />
+                      <Variable x:TypeArguments="x:String" Name="emailBody" />
+                      <Variable x:TypeArguments="x:String" Name="generatedResponse" />
+                      <Variable x:TypeArguments="x:String" Name="output_content" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[emailSender]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentMail.From.ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[emailSubject]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[currentMail.Subject.ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[emailBody]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[currentMail.Body.ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <isactr:ConnectorActivity Configuration="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" ConnectionId="9fa245bf-ad5c-4c5b-8228-f1057d8da136" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="433.6,424" sap2010:WorkflowViewState.IdRef="ConnectorActivity_6" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+                      <isactr:ConnectorActivity.FieldObjects>
+                        <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">gemini-1.0-pro</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">[emailBody]</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+                        <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+                        <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+                        <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+                        <isactr:FieldObject Name="topK" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Int32">40</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">None</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="_file" Type="FieldArgument" />
+                        <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+                        <isactr:FieldObject Name="topP" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Double">0.8</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+                        <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+                        <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+                        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">You are a helpful assistant</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Int64" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Double">0</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="n" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="_stop" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="x:String">[output_content]</OutArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="uiascb:v2_sub_generateChatCompletion_Create" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                      </isactr:ConnectorActivity.FieldObjects>
+                    </isactr:ConnectorActivity>
+                    <isactr:ConnectorActivity Configuration="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" ConnectionId="9fa245bf-ad5c-4c5b-8228-f1057d8da136" DisplayName="Generate Email" sap:VirtualizedContainerService.HintSize="433.6,684" sap2010:WorkflowViewState.IdRef="ConnectorActivity_4" UiPathActivityTypeId="c46e5f7f-894c-3074-9f7b-9c162b70e3c9">
+                      <isactr:ConnectorActivity.FieldObjects>
+                        <isactr:FieldObject Name="need_salutation" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="salutation_string" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">Hello</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="salutation_name" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="need_sign_off" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="sign_off_string" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">Regards</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="sign_off_name" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="email_content" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">[output_content]</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="detectInputLanguage" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="outputLanguage" Type="FieldArgument" />
+                        <isactr:FieldObject Name="creativity" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Double">0.1</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="total_words" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:Int64">50</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="style" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">Concise</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="output_format" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">Plain text</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="example" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="out_emailContent" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="x:String">[generatedResponse]</OutArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Jit_generateEmail" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="uiascb1:generateEmail_Create" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                      </isactr:ConnectorActivity.FieldObjects>
+                    </isactr:ConnectorActivity>
+                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[generatedResponse]" DisplayName="Send SMTP Mail Message" Email="valliviswavarshini@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="433.6,169.6" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" MailMessage="[CurrentMail]" Password="ydjg nsmu ehbh nbgw" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;RE: &quot; +emailSubject]" To="[emailSender]">
+                      <ui:SendMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:SendMail.Files>
+                    </ui:SendMail>
+                  </Sequence>
+                </ActivityAction>
+              </umab:ForEachEmailX.Body>
+            </umab:ForEachEmailX>
+          </Sequence>
+        </ActivityAction>
+      </umab:GmailApplicationCard.Body>
+      <umab:GmailApplicationCard.EmailAddress>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </umab:GmailApplicationCard.EmailAddress>
+    </umab:GmailApplicationCard>
+  </Sequence>
+</Activity>
